@@ -39,12 +39,34 @@ header {
 header a {
   font-size: 1.5rem;
   color: var(--off-white);
+  text-decoration: none;
+  display: inline-block;
+}
+
+header a::after {
+  content: '';
+  width: 0px;
+  height: 3px;
+  display: block;
+  background-color: var(--secondary-color);
+  transition: 1s ease-in-out;
+}
+
+header a:hover::after {
+  width: 100%;
 }
 /* end header link animations */
 
 /* article link transitions */
 main a {
   color: var(--danger-color);
+  text-decoration: none;
+}
+
+main a:hover {
+  background: var(--primary-color);
+  height: 100%;
+  transition: 200ms linear;
 }
 /* end article link transitions */
 
@@ -100,6 +122,21 @@ section.hero > button {
   border-radius: 12px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  animation-name: range;
+  animation-duration: 5s;
+}
+
+@keyframes range {
+  from {
+    background-color: var(--secondary-color);
+  }
+  to {
+    background-color: var(--primary-color);
+  }
 }
 
 main article {
